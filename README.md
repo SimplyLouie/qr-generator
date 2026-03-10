@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# 🚀 QR Code Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern, and powerful QR Code Generator built with React and Vite. Generate high-quality QR codes for URLs, plain text, or VCard contact information, with support for custom logo embedding.
 
-Currently, two official plugins are available:
+![QR Code Generator Preview](https://github.com/SimplyLouie/qr-generator/raw/main/public/qr-icon.svg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Multiple Formats**: Support for URLs (with auto-formatting), plain text, and VCard contact details.
+- **Custom Branding**: Upload your own logo (PNG, JPG, SVG) and embed it directly into the QR code.
+- **Responsive Design**: Fast and mobile-friendly UI with a premium glassmorphic aesthetic.
+- **HD Downloads**: Export your generated QR codes as high-resolution PNG files.
+- **Privacy First**: All generation happens locally in your browser. No data is stored or sent to a server.
+- **Instant Preview**: Real-time generation as you type or adjust settings.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+- **Framework**: [React](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **QR Engine**: [QRious](https://github.com/neocotic/qrious)
+- **Styling**: Modern CSS with custom gradients and micro-animations.
+- **Deployment**: [GitHub Pages](https://pages.github.com/) via GitHub Actions.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 Live Demo
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Check out the live version here:
+**[https://simplylouie.github.io/qr-generator/](https://simplylouie.github.io/qr-generator/)**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 💻 Getting Started
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/SimplyLouie/qr-generator.git
+   cd qr-generator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+Built with ❤️ by [SimplyLouie](https://github.com/SimplyLouie)
