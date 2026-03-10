@@ -7,6 +7,8 @@ A sleek, modern, and powerful QR Code Generator built with React and Vite. Gener
 ## ✨ Features
 
 - **Multiple Formats**: Support for URLs (with auto-formatting), plain text, and VCard contact details.
+- **Mobile Version**: Fully responsive design optimized for smartphones and tablets.
+- **Installable PWA**: Install the generator directly to your home screen for a native app experience.
 - **Custom Branding**: Upload your own logo (PNG, JPG, SVG) and embed it directly into the QR code.
 - **Responsive Design**: Fast and mobile-friendly UI with a premium glassmorphic aesthetic.
 - **HD Downloads**: Export your generated QR codes as high-resolution PNG files.

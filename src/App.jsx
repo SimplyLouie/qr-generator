@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { QrCode, Link, MessageSquare, User, Download, Copy, Check, ImagePlus, X } from 'lucide-react';
+import './App.css';
 
 export default function QRCodeGenerator() {
   const [activeTab, setActiveTab] = useState('url');
@@ -143,7 +144,7 @@ export default function QRCodeGenerator() {
           <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 64, height: 64, background: 'linear-gradient(135deg, #7c3aed, #2563eb)', borderRadius: 20, marginBottom: 16, boxShadow: '0 8px 24px rgba(124,58,237,0.35)' }}>
             <QrCode color="white" size={30} />
           </div>
-          <h1 style={{ fontSize: 36, fontWeight: 800, background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: '0 0 8px' }}>QR Code Generator</h1>
+          <h1 className="header-title" style={{ fontSize: 36, fontWeight: 800, background: 'linear-gradient(135deg, #7c3aed, #2563eb)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: '0 0 8px' }}>QR Code Generator</h1>
           <p style={{ color: '#6b7280', fontSize: 16, margin: 0 }}>Generate HD QR codes with your logo — free & instant</p>
         </div>
 
@@ -151,9 +152,9 @@ export default function QRCodeGenerator() {
         <div style={{ background: 'white', borderRadius: 28, boxShadow: '0 20px 60px rgba(124,58,237,0.12)', border: '1.5px solid #ede9fe', overflow: 'hidden' }}>
 
           {/* Tabs */}
-          <div style={{ display: 'flex', borderBottom: '1.5px solid #ede9fe', background: '#faf9ff' }}>
+          <div className="tabs-container" style={{ display: 'flex', borderBottom: '1.5px solid #ede9fe', background: '#faf9ff' }}>
             {tabs.map(({ id, label, icon: Icon }) => (
-              <button key={id} onClick={() => setActiveTab(id)} style={{
+              <button key={id} onClick={() => setActiveTab(id)} className="tab-button" style={{
                 flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                 padding: '16px 12px', border: 'none', cursor: 'pointer', fontSize: 14, fontWeight: 600, transition: 'all .2s',
                 background: activeTab === id ? 'white' : 'transparent',
@@ -166,8 +167,8 @@ export default function QRCodeGenerator() {
             ))}
           </div>
 
-          <div style={{ padding: 32 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40 }}>
+          <div className="card-padding" style={{ padding: 32 }}>
+            <div className="grid-container">
 
               {/* Left */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
