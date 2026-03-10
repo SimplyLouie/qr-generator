@@ -70,7 +70,7 @@ export default function QRCodeGenerator() {
     qrContainerRef.current.innerHTML = '';
     const canvas = document.createElement('canvas');
     qrContainerRef.current.appendChild(canvas);
-    new window.QRious({ element: canvas, value: text, size: 1024, background: 'white', foreground: '#1e1b4b', level: logo ? 'H' : 'M' });
+    new window.QRious({ element: canvas, value: text, size: 1024, background: 'white', foreground: '#000000', level: logo ? 'H' : 'M' });
     canvas.style.cssText = 'width:100%;max-width:280px;height:auto;border-radius:16px;image-rendering:crisp-edges;display:block;margin:0 auto;';
     if (logo) await drawLogoOnCanvas(canvas, logo, logoSize);
   };
