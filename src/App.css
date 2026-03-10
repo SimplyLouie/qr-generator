@@ -87,3 +87,17 @@
   color: #1e1b4b;
   margin: 0;
 }
+
+#canvas-container canvas,
+#canvas-container svg {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}

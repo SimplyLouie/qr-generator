@@ -36,8 +36,8 @@ export default function QRCodeGenerator() {
 
   useEffect(() => {
     qrCodeInstance.current = new QRCodeStyling({
-      width: 1000,
-      height: 1000,
+      width: 300,
+      height: 300,
       type: 'canvas',
       data: qrData || ' ',
       image: logo,
@@ -57,7 +57,7 @@ export default function QRCodeGenerator() {
       qrCodeInstance.current.append(qrContainerRef.current);
       const canvas = qrContainerRef.current.querySelector('canvas');
       if (canvas) {
-        canvas.style.cssText = 'width:100%;max-width:280px;height:auto;border-radius:16px;display:block;margin:0 auto;';
+        canvas.style.cssText = 'width:100%; height:auto; border-radius:12px; display:block;';
       }
     }
   }, []);
@@ -92,7 +92,13 @@ export default function QRCodeGenerator() {
   };
 
   const downloadQRCode = () => {
-    qrCodeInstance.current?.download({ name: "qr-code", extension: "png" });
+    if (!qrCodeInstance.current) return;
+    qrCodeInstance.current.update({ width: 1000, height: 1000 });
+    qrCodeInstance.current.download({ name: "qr-code", extension: "png" });
+    // Restore preview size after a short delay
+    setTimeout(() => {
+      qrCodeInstance.current.update({ width: 300, height: 300 });
+    }, 500);
   };
 
   const copyToClipboard = async () => {
