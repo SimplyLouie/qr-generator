@@ -196,20 +196,20 @@ export default function QRCodeGenerator() {
                       style={{ width: '100%', padding: '14px 18px', border: '1.5px solid #e0d9ff', borderRadius: 14, fontSize: 15, color: '#1e1b4b', outline: 'none', resize: 'none', boxSizing: 'border-box', background: '#faf9ff', fontFamily: 'inherit' }} />
                   )}
                   {activeTab === 'contact' && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-                        <input placeholder="First Name" value={contactInfo.firstName} onChange={e => setContactInfo({ ...contactInfo, firstName: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
-                        <input placeholder="Last Name" value={contactInfo.lastName} onChange={e => setContactInfo({ ...contactInfo, lastName: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                        <div className="contact-form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                          <input placeholder="First Name" value={contactInfo.firstName} onChange={e => setContactInfo({ ...contactInfo, firstName: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
+                          <input placeholder="Last Name" value={contactInfo.lastName} onChange={e => setContactInfo({ ...contactInfo, lastName: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
+                        </div>
+                        <input placeholder="Phone Number" value={contactInfo.phone} onChange={e => setContactInfo({ ...contactInfo, phone: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
                       </div>
-                      <input placeholder="Phone Number" value={contactInfo.phone} onChange={e => setContactInfo({ ...contactInfo, phone: e.target.value })} style={{ padding: '12px', border: '1.5px solid #e0d9ff', borderRadius: 12, fontSize: 14, background: '#faf9ff' }} />
-                    </div>
                   )}
                 </div>
 
                 {/* Frame Style Section */}
                 <div>
                   <div className="selection-title">
-                    <h3><Frame size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 2. QR Frame</h3>
+                      <h3><Frame size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 2. QR Frame</h3>
                     <ChevronDown size={16} color="#9ca3af" />
                   </div>
                   <div className="selection-carousel">
@@ -224,7 +224,7 @@ export default function QRCodeGenerator() {
                 {/* Pattern Style Section */}
                 <div>
                   <div className="selection-title">
-                    <h3><Grid3X3 size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 2. QR Code Pattern</h3>
+                      <h3><Grid3X3 size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 3. QR Code Pattern</h3>
                     <ChevronDown size={16} color="#9ca3af" />
                   </div>
                   <div className="selection-carousel">
@@ -245,7 +245,7 @@ export default function QRCodeGenerator() {
                 {/* Eye Style Section */}
                 <div>
                   <div className="selection-title">
-                    <h3><QrCode size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 3. Corners Style</h3>
+                      <h3><QrCode size={18} style={{ verticalAlign: 'middle', marginRight: 6 }} /> 4. Corners Style</h3>
                   </div>
                   <div className="selection-carousel">
                     {cornerStyles.map(s => (
@@ -285,19 +285,19 @@ export default function QRCodeGenerator() {
               </div>
 
               {/* Right: Preview */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, paddingLeft: 20, borderLeft: '1.5px solid #f3f0ff' }}>
+                <div className="preview-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, paddingLeft: 20, borderLeft: '1.5px solid #f3f0ff' }}>
                 <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1e1b4b', margin: 0 }}>Live Preview</h2>
 
                 <div style={{ background: 'linear-gradient(135deg, #f5f3ff, #ede9fe, #dbeafe)', borderRadius: 24, padding: 32, width: '100%', boxSizing: 'border-box', border: '1.5px solid #ddd6fe', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 400 }}>
-                  <div id="canvas-container" style={{
-                    background: 'white',
-                    borderRadius: frameType === 'none' ? 20 : 16,
-                    padding: frameType === 'none' ? 20 : '16px 16px 40px',
-                    boxShadow: '0 12px 40px rgba(124,58,237,0.15)',
-                    border: '1.5px solid #ede9fe',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
+                    <div className="preview-container" id="canvas-container" style={{
+                      background: 'white',
+                      borderRadius: frameType === 'none' ? 20 : 16,
+                      padding: frameType === 'none' ? 20 : '16px 16px 40px',
+                      boxShadow: '0 12px 40px rgba(124,58,237,0.15)',
+                      border: '1.5px solid #ede9fe',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}>
                     <div ref={qrContainerRef} />
 
                     {frameType === 'banner' && (
