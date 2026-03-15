@@ -15,12 +15,6 @@
   }
 
   .header-title {
-  @media (max-width: 1024px) {
-    .grid-container {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  }
     font-size: 28px !important;
   }
 
@@ -47,21 +41,21 @@
   /* IE/Edge */
 }
 
-    .preview-section {
-      padding-left: 0 !important;
-      border-left: none !important;
-    }
+.preview-section {
+  padding-left: 0 !important;
+  border-left: none !important;
+}
 
-    .preview-container {
-      min-height: 220px !important;
-      padding: 16px !important;
-    }
+.preview-container {
+  min-height: 220px !important;
+  padding: 16px !important;
+}
 
-    .contact-form-grid {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 10px !important;
-    }
+.contact-form-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
 
 .selection-carousel::-webkit-scrollbar {
   display: none;
